@@ -13,7 +13,7 @@ public class TakeTurnsPrint {
     public static class TakeTurns{
         private static boolean flag = true;
         private static int count = 0;
-        public synchronized void print1() {
+        public synchronized void print1() {//通过加锁保证可见性
             for (int i = 0;i<=50;i++){
                 while (flag){
                     try {
