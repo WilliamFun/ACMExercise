@@ -19,7 +19,7 @@ public class TakeTurnsPrint {
                     try {
                         wait();
                     }catch (InterruptedException e){
-
+                        e.printStackTrace();
                     }
 
                 }
@@ -35,7 +35,7 @@ public class TakeTurnsPrint {
                     try{
                         wait();
                     }catch (InterruptedException e){
-
+                        e.printStackTrace();
                     }
 
                 }
@@ -49,9 +49,13 @@ public class TakeTurnsPrint {
     public static void main(String[] args) {
         TakeTurns takeTurns = new TakeTurns();
 
-        new Thread(takeTurns::print1).start();
+        new Thread(()->{
+            takeTurns.print1();
+        }).start();
 
-        new Thread(takeTurns::print2).start();
+        new Thread(()->{
+            takeTurns.print2();
+        }).start();
 
     }
 

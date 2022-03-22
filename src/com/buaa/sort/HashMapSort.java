@@ -16,14 +16,11 @@ public class HashMapSort {
 
         //将map.entrySet()转换成list
         List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(map.entrySet());
-        Collections.sort(list, new Comparator<Entry<String, Integer>>() {
-            //降序排序
-            @Override
-            public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-                //return o1.getValue().compareTo(o2.getValue());
+        //降序排序
+        Collections.sort(list, (o1, o2) -> {
+            //return o1.getValue().compareTo(o2.getValue());
 //                return o2.getValue().compareTo(o1.getValue());
-                return o2.getValue()-o1.getValue();
-            }
+            return o2.getValue()-o1.getValue();
         });
 
         for (Entry<String, Integer> mapping : list) {
