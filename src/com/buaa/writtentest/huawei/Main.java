@@ -93,6 +93,9 @@ public class Main {
             System.out.println(ans);
         }
 
+        String s = "aaaa";
+        String s1 = "bbbb";
+        System.out.println(s.compareTo(s1));
 
 
     }
